@@ -46,6 +46,8 @@
 
     <link rel="stylesheet" href="{{ asset('assets/vendor_assets/css/wickedpicker.min.css') }}">
 
+    <link rel="stylesheet" href="{{asset('assets/vendor_assets/js/datatables.net-bs4/dataTables.bootstrap4.css')}}">
+
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     <!-- endinject -->
@@ -72,7 +74,7 @@
 
                 <div class="crm mb-25">
                     <div class="container-fluid">
-                        @yield('contents')
+                        @yield('content')
                     </div>
                 </div>
 
@@ -164,6 +166,14 @@
     <script src="{{ asset('assets/vendor_assets/js/slick.min.js') }}"></script>
 
     <script src="{{ asset('assets/vendor_assets/js/trumbowyg.min.js') }}"></script>
+
+    <script src="{{asset('assets/vendor_assets/js/datatables.net/jquery.dataTables.js')}}"></script>
+
+    <script src="{{asset('assets/vendor_assets/js/datatables.net-bs4/dataTables.bootstrap4.js')}}"></script>
+
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
 
     <script src="{{ asset('assets/vendor_assets/js/wickedpicker.min.js') }}"></script>
 

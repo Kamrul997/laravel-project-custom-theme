@@ -9,7 +9,7 @@
     <nav class="navbar navbar-light">
         <div class="navbar-left">
             <div class="logo-area">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="/">
                     <img class="dark" src="{{ asset('assets/img/logo-dark.png') }}" alt="logo">
                     <img class="light" src="{{ asset('assets/img/logo-white.png') }}" alt="logo">
                 </a>

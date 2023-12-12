@@ -3,7 +3,7 @@
         <div class="sidebar__menu-group">
             <ul class="sidebar_nav">
                 <li class="">
-                    <a href="/" class="active">
+                    <a href="#" class="active">
                         <span class="nav-icon uil uil-clipboard-notes"></span>
                         <span class="menu-text">Dashboard</span>
                     </a>
@@ -11,6 +11,20 @@
                 <li class="menu-title mt-30">
                     <span>Components</span>
                 </li>
+
+                <li class="has-child">
+                    <a href="#" class="">
+                        <span class="nav-icon uil uil-setting"></span>
+                        <span class="menu-text">Settings</span>
+                        <span class="toggle-icon"></span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{ route('administrative.permission') }}">Permission</a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="has-child">
                     <a href="#" class="">
                         <span class="nav-icon uil uil-window-section"></span>
@@ -26,7 +40,6 @@
                         </li>
                     </ul>
                 </li>
-
             </ul>
         </div>
     </div>
