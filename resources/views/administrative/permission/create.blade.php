@@ -60,7 +60,7 @@
                         <form action="{{ route('administrative.permission.store') }}" method="POST">
                             @csrf
                             <div class="form-group">
-                                <label for="formGroupExampleInput"
+                                <label for="name"
                                     class="color-dark fs-14 fw-500 align-center mb-10">Name</label>
                                 <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15"
                                     id="name" name="name" placeholder="" required>

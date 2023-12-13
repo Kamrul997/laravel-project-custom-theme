@@ -1,5 +1,9 @@
 @extends('administrative.layouts.master')
+@section('page-css')
+<style>
 
+</style>
+@endsection
 
 @section('content')
     <div class="pt-3">
@@ -25,10 +29,10 @@
                             <div class="table-responsive">
                                <table class="table mb-0 table-borderless"  id="datatables">
                                 <thead>
-                                    <tr>
-                                        <th> SL</th>
+                                    <tr class="userDatatable-header">
+                                        <th>SL</th>
                                         <th>Name</th>
-                                        <th class="disabled-sorting text-left" style="width: 100px">Edit</th>
+                                        <th class="disabled-sorting text-left" style="width: 100px">Action</th>
                                         <!-- <th class="disabled-sorting text-left" style="width: 100px">delete</th> -->
                                     </tr>
                                 </thead>

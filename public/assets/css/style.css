@@ -15180,6 +15180,65 @@ input[type=checkbox]:checked + label.strikethrough {
     justify-content: space-between;
   }
 }
+.pagination {
+    margin: -2px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .page-link {
+    min-height: 32px;
+    font-size: 14px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4.5px 11.75px;
+    border-width: 1px;
+    border-style: solid;
+    background-color: var(--color-white);
+    margin: 2.5px 0px 2.5px 5px !important;
+    border: 1px solid var(--border-color);
+    color: var(--color-gray);
+    line-height: normal;
+}
+.page-link:focus {
+    z-index: 3;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    outline: 0;
+    -webkit-box-shadow:none;
+    box-shadow: none;
+}
+.page-item.active .page-link {
+    background-color: var(--color-primary) !important
+    ;
+    color: var(--color-white) !important;
+    border: 1px solid var(--color-primary);
+}
+.page-link:hover{
+    background-color: var(--color-primary) !important
+    ;
+    color: var(--color-white) !important;
+    border: 1px solid var(--color-primary);
+  }
+  .userDatatable.userDatatable--ticket table thead tr:not(.footable-filtering) th {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-gray);
+    text-transform: capitalize !important;
+}
+.userDatatable.userDatatable--ticket table tbody tr:not(.footable-filtering) td {
+    font-size: 15px;
+    font-weight: 500;
+    color: #0a0a0a!important;
+}
 .user-list-item .users-list-body .last-chat-time small {
   color: var(--color-light);
   font-size: 12px;
@@ -30979,5 +31038,10 @@ body:after {
   .chat-box {
     padding: 19px 0;
   }
+
+
+
+
+
 }
 /*# sourceMappingURL=maps/style.css.map */

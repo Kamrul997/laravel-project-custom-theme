@@ -3,7 +3,7 @@
         <div class="sidebar__menu-group">
             <ul class="sidebar_nav">
                 <li class="">
-                    <a href="#" class="active">
+                    <a href="/" class="{{ request()->is('administrative/dashboard') ? 'active' : '' }}">
                         <span class="nav-icon uil uil-clipboard-notes"></span>
                         <span class="menu-text">Dashboard</span>
                     </a>
@@ -12,20 +12,20 @@
                     <span>Components</span>
                 </li>
 
-                <li class="has-child">
-                    <a href="#" class="">
+                <li class="has-child {{ request()->is('administrative/permission/*') ? 'open' : '' }}">
+                    <a href="#" class="{{ request()->is('administrative/permission/*') ? 'active' : '' }}">
                         <span class="nav-icon uil uil-setting"></span>
                         <span class="menu-text">Settings</span>
                         <span class="toggle-icon"></span>
                     </a>
                     <ul>
-                        <li>
+                        <li class="{{ request()->is('administrative/permission/*') ? 'active' : '' }}">
                             <a href="{{ route('administrative.permission') }}">Permission</a>
                         </li>
                     </ul>
                 </li>
 
-                <li class="has-child">
+                {{-- <li class="has-child">
                     <a href="#" class="">
                         <span class="nav-icon uil uil-window-section"></span>
                         <span class="menu-text">Theme Settings</span>
@@ -39,7 +39,7 @@
                             <a href="#" data-layout="dark">Dark Mode</a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </div>
