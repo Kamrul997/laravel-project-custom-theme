@@ -12,8 +12,8 @@
                     <span>Components</span>
                 </li>
 
-                <li class="has-child {{ request()->is('administrative/permission/*') ? 'open' : '' }}">
-                    <a href="#" class="{{ request()->is('administrative/permission/*') ? 'active' : '' }}">
+                <li class="has-child {{ request()->is('administrative/*/*') ? 'open' : '' }}">
+                    <a href="#" class="{{ request()->is('administrative/*/*') ? 'active' : '' }}">
                         <span class="nav-icon uil uil-setting"></span>
                         <span class="menu-text">Settings</span>
                         <span class="toggle-icon"></span>
@@ -21,6 +21,9 @@
                     <ul>
                         <li class="{{ request()->is('administrative/permission/*') ? 'active' : '' }}">
                             <a href="{{ route('administrative.permission') }}">Permission</a>
+                        </li>
+                        <li class="{{ request()->is('administrative/role/*') ? 'active' : '' }}">
+                            <a href="{{ route('administrative.role') }}">Role</a>
                         </li>
                     </ul>
                 </li>

@@ -57,13 +57,13 @@
                 </div>
                 <div class="card-body pb-md-30">
                     <div class="Vertical-form">
-                        <form action="{{ route('administrative.permission.store') }}" method="POST">
+                        <form action="{{ route('administrative.permission.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label for="name"
                                     class="color-dark fs-14 fw-500 align-center mb-10">Name</label>
                                 <input type="text" class="form-control ih-medium ip-gray radius-xs b-light px-15"
-                                    id="name" name="name" placeholder="" required>
+                                    id="name" name="name" placeholder="" value="{{ old('name', isset($data) ? $data->name : '') required>
                                 @if ($errors->has('name'))
                                     <div id="name-error" class="invalid-feedback" for="name">Please enter a name</div>
                                 @endif
