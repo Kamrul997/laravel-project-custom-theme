@@ -53,6 +53,8 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('assets/vendor_assets/css/hexa-toaster.css') }}">
+
     <!-- endinject -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/favicon.png') }}">
     <!-- Fonts -->
@@ -64,25 +66,30 @@
 <body>
     <div class="layout-light side-menu">
 
-{{-- navbar --}}
+        {{-- navbar --}}
         @include('administrative.layouts.partial._navbar')
 
 
         <main class="main-content">
 
-{{-- sidebar --}}
+            {{-- sidebar --}}
             @include('administrative.layouts.partial._sidebar')
 
             <div class="contents">
 
                 <div class="crm mb-25">
                     <div class="container-fluid">
+
+                        <!-- toaster Start -->
+                        <div class="hs-toast-wrapper  hs-toast-fixed-top " id="hexa-toaster"></div>
+                        <!-- toaster End -->
+
                         @yield('content')
                     </div>
                 </div>
 
             </div>
-{{-- footer --}}
+            {{-- footer --}}
             @include('administrative.layouts.partial._footer')
         </main>
         <div id="overlayer">
@@ -199,6 +206,20 @@
     <script src="{{ asset('assets/theme_assets/js/leaflet-init.js') }}"></script>
 
     <script src="{{ asset('assets/theme_assets/js/main.js') }}"></script>
+
+    <script src="{{ asset('assets/vendor_assets/js/hexa-toaster.js') }}"></script>
+
+    @include('administrative.layouts.partial._toaster')
+
+    <!-- toaster code for js -->
+    <!-- showToast({
+      eleWrapper: '#hexa-toaster',
+      msg: 'This is a message',
+      // error warning info success
+      theme: 'success',
+      closeButton: true,
+      autoClose: true
+    }); -->
 
     @yield('page-js')
     <!-- endinject-->

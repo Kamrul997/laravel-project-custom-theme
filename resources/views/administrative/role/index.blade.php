@@ -13,7 +13,7 @@
             </div>
             <div class="d-flex align-items-center flex-wrap text-nowrap">
                 @can('permission_create')
-                    <a href="{{ route('administrative.role.create') }}" class="btn btn-primary btn-icon-text mb-2 mb-md-0">
+                    <a href="{{ route('administrative.role.create') }}" class="btn btn-xs btn-primary btn-icon-text mb-2 mb-md-0">
                         <i class="fas fa-plus-square" data-feather="plus-square"></i>
                         Add New
                     </a>
