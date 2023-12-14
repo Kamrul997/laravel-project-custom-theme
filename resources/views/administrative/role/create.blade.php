@@ -1,5 +1,14 @@
 @extends('administrative.layouts.master')
 @section('page-css')
+<style>
+    .select2-container .select2-selection--multiple .select2-selection__rendered {
+  max-height: auto; /* Adjust this value according to your layout and design */
+  overflow-y: auto; /* Add a vertical scrollbar when content exceeds the height */
+}
+
+
+
+</style>
 @endsection
 @section('content')
     <div class="mt-4"></div>
@@ -70,6 +79,19 @@
             </div>
         </div>
     </div>
+
+    <div class="card card-default card-md mb-4">
+        <div class="card-header  py-20">
+           <h6>Other types of message</h6>
+        </div>
+        <div class="card-body">
+           <div class="button-group flex-wrap justify-content-sm-start justify-content-center">
+              <button class="btn btn-outline-lighten fs-14 fw-500 btn-lg btn-message" data-messageType="success" data-messageIcon="check-circle">Success</button>
+              <button class="btn btn-outline-lighten fs-14 fw-500 btn-lg btn-message" data-messageType="warning" data-messageIcon="exclamation-circle">Warning</button>
+              <button class="btn btn-outline-lighten fs-14 fw-500 btn-lg btn-message" data-messageType="danger" data-messageIcon="times-circle">Error</button>
+           </div>
+        </div>
+     </div>
 @endsection
 @section('page-js')
     <script>

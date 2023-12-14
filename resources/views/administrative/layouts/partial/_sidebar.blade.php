@@ -2,8 +2,8 @@
     <div class="sidebar sidebar-collapse" id="sidebar">
         <div class="sidebar__menu-group">
             <ul class="sidebar_nav">
-                <li class="">
-                    <a href="/" class="{{ request()->is('administrative/dashboard') ? 'active' : '' }}">
+                <li class="{{ request()->is('administrative/dashboard') ? 'active' : '' }}">
+                    <a href="/" class="">
                         <span class="nav-icon uil uil-clipboard-notes"></span>
                         <span class="menu-text">Dashboard</span>
                     </a>

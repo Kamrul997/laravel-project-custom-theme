@@ -4,10 +4,14 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\CustomNotification;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Unit;
+use App\Models\SubUnit;
 
 class User extends Authenticatable
 {
@@ -59,4 +63,67 @@ class User extends Authenticatable
         'unit_ids' => 'json',
         'subUnit_ids' => 'json',
     ];
+
+    public function getImageAttribute($value)
+    {
+        if ($value) {
+            return env('APP_URL') . 'assets/images/' . $value;
+        }
+    }
+
+    // Get Zone -> SubunitUsers
+    public static function getZoneSubunitUserIds($zoneId)
+    {
+        return self::role('Subunit')
+            ->whereIn('unit_id', Unit::where('zone_id', $zoneId)->pluck('id')->toArray())
+            ->pluck('id')->toArray();
+    }
+
+    // Get Area -> SubunitUsers
+    public static function getAreaSubunitUserIds($areaId)
+    {
+        return self::role('Subunit')
+            ->whereIn('unit_id', Unit::where('area_id', $areaId)->pluck('id')->toArray())
+            ->pluck('id')->toArray();
+    }
+
+    // Get Unit -> SubunitUsers
+    public static function getUnitSubunitUserIds($unitId)
+    {
+        return self::role('Subunit')
+            ->where('unit_id', $unitId)
+            ->pluck('id')->toArray();
+    }
+
+    public function notifications()
+    {
+        return $this->hasMany(CustomNotification::class, 'user_id', 'id');
+    }
+    public static function getTimeAgo($time)
+    {
+        $time_difference = time() - $time;
+
+        if ($time_difference < 1) {
+            return '1 second ago';
+        }
+        $condition = array(
+            12 * 30 * 24 * 60 * 60 =>  'year',
+            30 * 24 * 60 * 60       =>  'month',
+            24 * 60 * 60            =>  'day',
+            60 * 60                 =>  'hour',
+            60                      =>  'minute',
+            1                       =>  'second'
+        );
+
+        foreach ($condition as $secs => $str) {
+            $d = $time_difference / $secs;
+
+            if ($d >= 1) {
+                $t = round($d);
+                return $t . ' ' . $str . ($t > 1 ? 's' : '') . ' ago';
+            }
+        }
+
+    }
+
 }
