@@ -46,11 +46,9 @@
                                 <select style="height: 50px" name="permission[]" id="permission"
                                     data-placeholder="Select Permission" class="form-control select2 " multiple="multiple"
                                     required>
-                                    @foreach ($permissions as $id => $permissions)
-                                        <option value="{{ $id }}"
-                                            {{ in_array($id, old('permission', [])) || (isset($role) && $role->permissions->contains($id)) ? 'selected' : '' }}>
-                                            {{ ucfirst(str_replace('_', ' ', $permissions)) }}</option>
-                                    @endforeach
+                                    @foreach($permissions as $id => $permissions)
+                                    <option value="{{ $id }}" {{ (in_array($id, old('permissions', [])) || isset($data) && $data->permissions()->pluck('name', 'id')->contains($id)) ? 'selected' : '' }}>{{ ucfirst(str_replace("_"," ",$permissions)) }}</option>
+                                @endforeach
                                 </select>
                                 @if ($errors->has('permission'))
                                     <label id="name-error" class="error mt-2 text-danger" for="name">Please enter a
