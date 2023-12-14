@@ -2,7 +2,24 @@
 @section('page-css')
 @endsection
 @section('content')
-    <div class="mt-4"></div>
+
+<div class="mt-2">
+    <ul class="dm-breadcrumb nav">
+        <li class="dm-breadcrumb__item">
+            <a href="#">
+                Home
+            </a>
+            <span class="slash">/</span>
+        </li>
+        <li class="dm-breadcrumb__item">
+            <a href="{{route('administrative.role')}}">Role</a>
+            <span class="slash">/</span>
+        </li>
+        <li class="dm-breadcrumb__item">
+            <span>Edit</span>
+        </li>
+    </ul>
+</div>
     <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin mt-2 mb-2 ">
         <div>
             <h4 class="mb-3 mb-md-0">Role Update</h4>

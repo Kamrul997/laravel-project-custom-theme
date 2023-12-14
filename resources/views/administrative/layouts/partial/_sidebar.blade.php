@@ -25,6 +25,9 @@
                         <li class="{{ request()->is('administrative/role/*') ? 'active' : '' }}">
                             <a href="{{ route('administrative.role') }}">Role</a>
                         </li>
+                        <li class="{{ request()->is('administrative/user/*') ? 'active' : '' }}">
+                            <a href="{{ route('administrative.user') }}">User</a>
+                        </li>
                     </ul>
                 </li>
 

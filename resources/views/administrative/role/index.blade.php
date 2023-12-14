@@ -6,6 +6,19 @@
 @endsection
 
 @section('content')
+    <div class="mt-2">
+        <ul class="dm-breadcrumb nav">
+            <li class="dm-breadcrumb__item">
+                <a href="#">
+                    Home
+                </a>
+                <span class="slash">/</span>
+            </li>
+            <li class="dm-breadcrumb__item">
+                <span>Role</span>
+            </li>
+        </ul>
+    </div>
     <div class="pt-3">
         <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin mb-2 ">
             <div>
@@ -13,7 +26,8 @@
             </div>
             <div class="d-flex align-items-center flex-wrap text-nowrap">
                 @can('permission_create')
-                    <a href="{{ route('administrative.role.create') }}" class="btn btn-xs btn-primary btn-icon-text mb-2 mb-md-0">
+                    <a href="{{ route('administrative.role.create') }}"
+                        class="btn btn-xs btn-primary btn-icon-text mb-2 mb-md-0">
                         <i class="fas fa-plus-square" data-feather="plus-square"></i>
                         Add New
                     </a>
@@ -45,7 +59,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 @endsection
 

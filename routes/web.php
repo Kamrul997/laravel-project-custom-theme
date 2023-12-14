@@ -6,6 +6,7 @@ use App\Http\Controllers\Administrative\AuthController;
 use App\Http\Controllers\Administrative\HomeController;
 use App\Http\Controllers\Administrative\PermissionController;
 use App\Http\Controllers\Administrative\RoleController;
+use App\Http\Controllers\Administrative\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,16 +71,18 @@ Route::namespace('Administrative')->middleware('auth')->prefix('administrative')
     });
 
     // User
-    //   Route::prefix('user')->group(function () {
+      Route::prefix('user')->group(function () {
 
-    //     Route::get('/list', [UserController::class, 'index'])->name('user');
+        Route::get('/list', [UserController::class, 'index'])->name('user');
 
-    //     Route::get('user-data', [UserController::class, 'data'])->name('user.data');
+        Route::get('user-data', [UserController::class, 'data'])->name('user.data');
 
-    //     Route::get('edit/{id}', [UserController::class, 'edit'])->name('user.edit');
+        Route::get('create', [UserController::class, 'create'])->name('user.create');
 
-    //     Route::put('update/{id}', [UserController::class, 'update'])->name('user.update');
+        Route::get('edit/{id}', [UserController::class, 'edit'])->name('user.edit');
 
-    //     Route::delete('delete/{id}', [UserController::class, 'destroy'])->name('user.destroy');
-    //   });
+        Route::put('update/{id}', [UserController::class, 'update'])->name('user.update');
+
+        Route::delete('delete/{id}', [UserController::class, 'destroy'])->name('user.destroy');
+      });
 });
