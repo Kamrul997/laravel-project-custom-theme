@@ -49,11 +49,7 @@ class RoleService
             ->addColumn('permission', function($data){
                 $html = '';
                 foreach($data->permissions()->pluck('name') as $permission){
-                    $html.= '
-                    <div class="userDatatable-content d-inline-block">
-                    <span class="bg-opacity-success  color-success userDatatable-content-status active">'.ucfirst(str_replace("_"," ",$permission)).'</span>
-                    </div>
-                    ';
+                    $html.= '<span class="badge badge-success">' . ucfirst(str_replace("_"," ",$permission)) . '</span>';
                 }
                 return $html;
             })
